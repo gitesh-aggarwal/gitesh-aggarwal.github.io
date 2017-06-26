@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<input class="inputtemp" placeholder="write temp in farenheit" type="text" />
+		<input class="testclick" type="submit" />
+		<script>
+			$(document).ready(function(){
+				$(".testclick").click(function(){
+					var fartemp = $(".inputtemp").val();
+					function dekhdekh(){
+						var celcius = (fartemp-32)*5/9;
+						return celcius;
+					}
+					alert(dekhdekh());
+				});
+			});
+		</script>
+	</body>
+</html>
+
