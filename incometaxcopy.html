@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="testincome.js"></script>
+		<link rel="stylesheet" type="text/css" href="incometax.css">
+	
+	</head>
+	<body>
+		<div class="container">
+			<h1 class = "income-head">INCOME TAX</h1>
+			
+				<div class="FYStyle">
+					Financial Year:
+					  <select class="inputStyle financeYr" name="FY">
+						<option value="fy17-18">2017-18</option>
+						<option value="fy16-17">2016-17</option>
+						<option value="fy15-16">2015-16</option>			
+					  </select>
+				</div>
+				<div class="basicInfo">
+				<h3>PERSONAL DETAILS</h3>
+					<label>Client Name:</label>
+					<input class="inputStyle clientName" type="text" name="name"><br>
+					<label>DOB:</label>
+					<input class="inputStyle dateFormatting" type="date" data-date="" data-date-format="DD MMMM YYYY"><br>
+					<label>PAN Number:</label>
+					<input class="inputStyle pan" type="text" name="pan"><br>
+					<label>Gender:</label>
+					  <select class="inputStyle gender" name="gender">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+						<option value="other">Other</option>			
+					  </select>
+					<label>Email ID:</label>
+					<input class="inputStyle email" type="text" name="email"><br>					
+					<!--<label>Age:</label>
+					<input class="inputStyle" id="ageCalculator" type="text" name="pan" readonly><br>
+					-->
+				</div>
+				<div class="basicInfo">
+				<h3>INCOME DETAILS</h3>
+					<label>Monthly salary:</label>
+					<input class="inputStyle monthlySalary" type="number" name="salary"><br>
+					<label>Income from house property(yearly):</label>
+					<input class="inputStyle houseIncome" type="number" name="name"><br>
+					<label>Income from capital gains (yearly):</label>
+					<input class="inputStyle capitalIncome" type="number" name="name"><br>
+					<label>Income from business/proffession (yearly):</label>
+					<input class="inputStyle businessIncome" type="number" name="name"><br>
+					<label>income from other sources (yearly):</label>
+					<input class="inputStyle otherIncome" type="number" name="name"><br>	
+				</div>
+				<div class="basicInfo">
+					<h3>EXEMPTIONS</h3>
+					<h5 class="marginTopBottom" >Allowances exempt u/s 10(for Service Period):</h5>
+						<!-- <label>City of Residence:</label>
+						<input class="inputStyle residenceCost" type="number" name="residence"><br>
+						<label>Rent Paid:</label>
+						<input class="inputStyle rentPaid" type="number" name="rent"><br> -->
+						<label>H.R.A exemptions:</label>
+						<input class="inputStyle hraExempt" type="number" name="hra"><br>
+						<label>Conveyance allowances:</label>
+						<input class="inputStyle conveyance" type="number" name="conveyance"><br>
+						<label>Any Other Exempted Receipts/ allowances:</label>
+						<input class="inputStyle otherExempted" type="number" name="otherExempted"><br>
+						<label>Professional Tax:</label>
+						<input class="inputStyle professionalTax" type="number" name="professionaTax"><br>
+					<h5 class="marginTopBottom">Exemption on Home Loan Interest (Sec 24)</h5>
+						<label>Loss from house property (Section 24):</label>
+						<input class="inputStyle propertyLoss" type="number" name="propertyLoss"><br>
+						<label>Additional tax exemption for First Time Home Buyers (Budget 2016):</label>
+						<input class="inputStyle homeBuyer" type="number" name="homeBuyer"><br>
+						<label>Interest paid on Home Improvement Loan (max 30,000):</label>
+						<input class="inputStyle homeImprovement" type="number" name="homeImprovement"><br>
+				</div>
+				<div class="basicInfo">
+					<h3>DEDUCTIONS</h3>
+						<h5 class="marginTopBottom" >Deduction under Sec 80C</h5>
+							<label>EPF & VPF Contribution:</label>
+							<input class="inputStyle EPFandVPF" type="number" name="EPFandVPF"><br>
+							<label>Public Provident Fund (PPF):</label>
+							<input class="inputStyle PPF" type="number" name="PPF"><br>
+							<label>Senior Citizen’s Saving Scheme (SCSS):</label>
+							<input class="inputStyle SCSS" type="number" name="SCSS"><br>
+							<label>N.S.C (Investment + accrued Interest before Maturity Year):</label>
+							<input class="inputStyle NSC" type="number" name="NSC"><br>
+							<label>Tax Saving Fixed Deposit (5 Years and above):</label>
+							<input class="inputStyle taxSavingFD" type="number" name="taxSavingFD"><br>
+							<label>Tax Savings Bonds:</label>
+							<input class="inputStyle taxSavingBond" type="number" name="taxSavingBond"><br>
+							<label>E.L.S.S (Tax Saving Mutual Fund):</label>
+							<input class="inputStyle taxSavingMutualFund" type="number" name="taxSavingMutualFund"><br>
+							<label>Life Insurance Premiums:</label>
+							<input class="inputStyle lifeInsurancePremium" type="number" name="lifeInsurancePremium"><br>
+							<label>New Pension Scheme (NPS) (u/s 80CCC):</label>
+							<input class="inputStyle newPensionScheme" type="number" name="newPensionScheme"><br>
+							<label>Pension Plan from Insurance Companies/Mutual Funds (u/s 80CCC):</label>
+							<input class="inputStyle pensionInsuranceCompanies" type="number" name="pensionInsuranceCompanies"><br>
+							<label>80 CCD Central Govt. Employees Pension Plan (u/s 80CCD):</label>
+							<input class="inputStyle centralGovtEmployeePension" type="number" name="centralGovtEmployeePension"><br>
+							<label>Housing. Loan (Principal Repayment):</label>
+							<input class="inputStyle housingLoan" type="number" name="housingLoan"><br>
+							<label>M. Sukanya Samriddhi Account :</label>
+							<input class="inputStyle sukanyaSamridhiAccount" type="number" name="sukanyaSamridhiAccount"><br>
+							<label>Stamp Duty & Registration Charges:</label>
+							<input class="inputStyle stampAndRegistration" type="number" name="stampAndRegistration"><br>
+							<label>Tuition fees for 2 children:</label>
+							<input class="inputStyle tuitionFeeTwoChildren" type="number" name="tuitionFeeTwoChildren"><br>
+						<h5 class="marginTopBottom">Additional Deduction under Sec 80CCD NPS</h5>
+							<label>Additional Deduction under Sec 80CCD NPS:</label>
+							<input class="inputStyle Sec80CCDnps" type="number" name="Sec80CCDnps"><br>
+						<h5 class="marginTopBottom">Deduction under chapter VI A</h5>
+							<label>A. 80 D Medical Insurance premiums (for Self ):</label>
+							<input class="inputStyle selfMedicalInsurance" type="number" name="selfMedicalInsurance"><br>
+							<label>B. 80 D Medical Insurance premiums (for Parents):</label>
+							<input class="inputStyle parentsMedicalInsurance" type="number" name="parentsMedicalInsurance"><br>
+							<label>C. 80 E Int Paid on Education Loan:</label>
+							<input class="inputStyle intrestEduLoan" type="number" name="intrestEduLoan"><br>
+							<label>D. 80 DD Medical Treatment of handicapped Dependent:</label>
+							<input class="inputStyle medTreatHandicapDependent" type="number" name="medTreatHandicapDependent"><br>
+							<label>E. 80DDB Expenditure on Selected Medical Treatment for self/ dependent:</label>
+							<input class="inputStyle medTreatmentSelfDep" type="number" name="medTreatmentSelfDep"><br>
+							<label>F. 80G, 80GGA, 80GGC Donation to approved funds:</label>
+							<input class="inputStyle donationApprovedFunds" type="number" name="donationApprovedFunds"><br>
+							<label>G. 80GG For Rent in case of NO HRA Component (Budget 2016):</label>
+							<input class="inputStyle rentIfNoHRA" type="number" name="rentIfNoHRA"><br>
+							<label>H. 80U For Physically Disable Assesse:</label>
+							<input class="inputStyle physicaldisableAssesse" type="number" name="physicaldisableAssesse"><br>
+							<label>others:</label>
+							<input class="inputStyle otherDed" type="number" name="otherDed"><br>
+
+					</div>			
+				<div class="basicInfo">
+					<h3>TAX DETAILS</h3>
+				</div>
+				<input type="submit" id="register" value="Submit" />
+			<p style="font-size: 11px;"><b>NOTE:</b>if you have no  income from any particular source enter 0, and all the information must be filled. </p>
+		</div>
+	</body>
+</html>
