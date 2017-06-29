@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- ha ha ah-->
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="testincome.js"></script>
@@ -55,12 +54,18 @@
 				<div class="basicInfo">
 					<h3>EXEMPTIONS</h3>
 					<h5 class="marginTopBottom" >Allowances exempt u/s 10(for Service Period):</h5>
-						<!-- <label>City of Residence:</label>
-						<input class="inputStyle residenceCost" type="number" name="residence"><br>
+						<label>City of Residence:</label>
+						<select class="inputStyle residence" name="area">
+						<option value="male">Metro</option>
+						<option value="female">Non-Metro</option>		
+					  </select>
+						<label>Basic Salary + DA</label>
+						<input class="inputStyle basicSalary" type="number" name="basicSalary"><br> 
 						<label>Rent Paid:</label>
-						<input class="inputStyle rentPaid" type="number" name="rent"><br> -->
-						<label>H.R.A exemptions:</label>
-						<input class="inputStyle hraExempt" value="0.0" type="number" name="hra"><br>
+						<input class="inputStyle rentPaid" type="number" name="rent"><br>
+						<label>H.R.A received:</label>
+						<input class="inputStyle hraRecieved" type="number" name="hrarecieved"><br>
+						
 						<label>Conveyance allowances:</label>
 						<input class="inputStyle conveyance" type="number" value="0.0" name="conveyance"><br>
 						<label>Any Other Exempted Receipts/ allowances:</label>
@@ -77,59 +82,59 @@
 				</div>
 				<div class="basicInfo">
 					<h3>DEDUCTIONS</h3>
-						<h5 class="marginTopBottom" >Deduction under Sec 80C</h5>
+						<h5 class="marginTopBottom" >Deduction under Sec 80C (Max Rs.1,50,000/-)</h5>
 							<label>EPF & VPF Contribution:</label>
-							<input class="inputStyle EPFandVPF" value="0.0" type="number" name="EPFandVPF"><br>
+							<input class="inputStyle EPFandVPF ded80C" value="0.0" type="number" name="EPFandVPF"><br>
 							<label>Public Provident Fund (PPF):</label>
-							<input class="inputStyle PPF" type="number" value="0.0" name="PPF"><br>
+							<input class="inputStyle PPF ded80C" type="number" value="0.0" name="PPF"><br>
 							<label>Senior Citizen’s Saving Scheme (SCSS):</label>
-							<input class="inputStyle SCSS" type="number" name="SCSS" value="0.0"><br>
+							<input class="inputStyle SCSS ded80C" type="number" name="SCSS" value="0.0"><br>
 							<label>N.S.C (Investment + accrued Interest before Maturity Year):</label>
-							<input class="inputStyle NSC" type="number" name="NSC" value="0.0"><br>
+							<input class="inputStyle NSC ded80C" type="number" name="NSC" value="0.0"><br>
 							<label>Tax Saving Fixed Deposit (5 Years and above):</label>
-							<input class="inputStyle taxSavingFD" type="number" value="0.0" name="taxSavingFD"><br>
+							<input class="inputStyle taxSavingFD ded80C" type="number" value="0.0" name="taxSavingFD"><br>
 							<label>Tax Savings Bonds:</label>
-							<input class="inputStyle taxSavingBond" value="0.0" type="number" name="taxSavingBond"><br>
+							<input class="inputStyle taxSavingBond ded80C" value="0.0" type="number" name="taxSavingBond"><br>
 							<label>E.L.S.S (Tax Saving Mutual Fund):</label>
-							<input class="inputStyle taxSavingMutualFund" type="number" value="0.0" name="taxSavingMutualFund"><br>
+							<input class="inputStyle taxSavingMutualFund ded80C" type="number" value="0.0" name="taxSavingMutualFund"><br>
 							<label>Life Insurance Premiums:</label>
-							<input class="inputStyle lifeInsurancePremium" type="number" value="0.0" name="lifeInsurancePremium"><br>
+							<input class="inputStyle lifeInsurancePremium ded80C" type="number" value="0.0" name="lifeInsurancePremium"><br>
 							<label>New Pension Scheme (NPS) (u/s 80CCC):</label>
-							<input class="inputStyle newPensionScheme" type="number" value="0.0" name="newPensionScheme"><br>
+							<input class="inputStyle newPensionScheme ded80C" type="number" value="0.0" name="newPensionScheme"><br>
 							<label>Pension Plan from Insurance Companies/Mutual Funds (u/s 80CCC):</label>
-							<input class="inputStyle pensionInsuranceCompanies" type="number" value="0.0" name="pensionInsuranceCompanies"><br>
-							<label>80 CCD Central Govt. Employees Pension Plan (u/s 80CCD):</label>
-							<input class="inputStyle centralGovtEmployeePension" type="number" value="0.0" name="centralGovtEmployeePension"><br>
+							<input class="inputStyle pensionInsuranceCompanies ded80C" type="number" value="0.0" name="pensionInsuranceCompanies"><br>
+							<label>80 CCD Central Govt. Employees Pension Plan (u/s 80CCD) (Max Rs 50,000/-):</label>
+							<input class="inputStyle centralGovtEmployeePension ded80C" type="number" value="0.0" name="centralGovtEmployeePension"><br>
 							<label>Housing. Loan (Principal Repayment):</label>
-							<input class="inputStyle housingLoan" type="number" value="0.0" name="housingLoan"><br>
+							<input class="inputStyle housingLoan ded80C" type="number" value="0.0" name="housingLoan"><br>
 							<label>M. Sukanya Samriddhi Account :</label>
-							<input class="inputStyle sukanyaSamridhiAccount" type="number" value="0.0" name="sukanyaSamridhiAccount"><br>
+							<input class="inputStyle sukanyaSamridhiAccount ded80C" type="number" value="0.0" name="sukanyaSamridhiAccount"><br>
 							<label>Stamp Duty & Registration Charges:</label>
-							<input class="inputStyle stampAndRegistration" type="number" value="0.0" name="stampAndRegistration"><br>
+							<input class="inputStyle stampAndRegistration ded80C" type="number" value="0.0" name="stampAndRegistration"><br>
 							<label>Tuition fees for 2 children:</label>
-							<input class="inputStyle tuitionFeeTwoChildren" type="number" value="0.0" name="tuitionFeeTwoChildren"><br>
-						<h5 class="marginTopBottom">Additional Deduction under Sec 80CCD NPS</h5>
+							<input class="inputStyle tuitionFeeTwoChildren ded80C" type="number" value="0.0" name="tuitionFeeTwoChildren"><br>
+						<h5 class="marginTopBottom">Additional Deduction under Sec 80CCD NPS </h5>
 							<label>Additional Deduction under Sec 80CCD NPS:</label>
-							<input class="inputStyle Sec80CCDnps" type="number" name="Sec80CCDnps" value="0.0"><br>
+							<input class="inputStyle Sec80CCDnps ded80Ccd" type="number" name="Sec80CCDnps" value="0.0"><br>
 						<h5 class="marginTopBottom">Deduction under chapter VI A</h5>
 							<label>A. 80 D Medical Insurance premiums (for Self ):</label>
-							<input class="inputStyle selfMedicalInsurance" type="number" value="0.0" name="selfMedicalInsurance"><br>
+							<input class="inputStyle selfMedicalInsurance ded6A" type="number" value="0.0" name="selfMedicalInsurance"><br>
 							<label>B. 80 D Medical Insurance premiums (for Parents):</label>
-							<input class="inputStyle parentsMedicalInsurance" type="number" value="0.0" name="parentsMedicalInsurance"><br>
+							<input class="inputStyle parentsMedicalInsurance ded6A" type="number" value="0.0" name="parentsMedicalInsurance"><br>
 							<label>C. 80 E Int Paid on Education Loan:</label>
-							<input class="inputStyle intrestEduLoan" type="number" name="intrestEduLoan" value="0.0"><br>
+							<input class="inputStyle intrestEduLoan ded6A" type="number" name="intrestEduLoan" value="0.0"><br>
 							<label>D. 80 DD Medical Treatment of handicapped Dependent:</label>
-							<input class="inputStyle medTreatHandicapDependent" value="0.0" type="number" name="medTreatHandicapDependent"><br>
+							<input class="inputStyle medTreatHandicapDependent ded6A" value="0.0" type="number" name="medTreatHandicapDependent"><br>
 							<label>E. 80DDB Expenditure on Selected Medical Treatment for self/ dependent:</label>
-							<input class="inputStyle medTreatmentSelfDep" type="number" value="0.0" name="medTreatmentSelfDep"><br>
+							<input class="inputStyle medTreatmentSelfDep ded6A" type="number" value="0.0" name="medTreatmentSelfDep"><br>
 							<label>F. 80G, 80GGA, 80GGC Donation to approved funds:</label>
-							<input class="inputStyle donationApprovedFunds" type="number" value="0.0" name="donationApprovedFunds"><br>
+							<input class="inputStyle donationApprovedFunds ded6A" type="number" value="0.0" name="donationApprovedFunds"><br>
 							<label>G. 80GG For Rent in case of NO HRA Component (Budget 2016):</label>
-							<input class="inputStyle rentIfNoHRA" type="number" name="rentIfNoHRA" value="0.0"><br>
+							<input class="inputStyle rentIfNoHRA ded6A" type="number" name="rentIfNoHRA" value="0.0"><br>
 							<label>H. 80U For Physically Disable Assesse:</label>
-							<input class="inputStyle physicaldisableAssesse" type="number" value="0.0" name="physicaldisableAssesse"><br>
+							<input class="inputStyle physicaldisableAssesse ded6A" type="number" value="0.0" name="physicaldisableAssesse"><br>
 							<label>others:</label>
-							<input class="inputStyle otherDed" type="number" name="otherDed" value="0.0"><br>
+							<input class="inputStyle otherDed ded6A" type="number" name="otherDed" value="0.0"><br>
 
 					</div>			
 				<div class="basicInfo">

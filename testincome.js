@@ -105,6 +105,38 @@ function eduCess(taxPayable){
 	return ({primary: primary,
 			secondary: secondary})
 }
+
+function deductionSum(a){
+	var dedsum=0;
+	var level=0;
+	if (a == ".ded80C"){
+		level =150000;
+	}else if(a == ".ded80Ccd"){
+		level = 50000;
+	};
+		$(a).each(function(){
+        dedsum += +$(this).val();
+    });
+	if(dedsum > level && level != 0){
+		dedsum = level;
+	}
+	return dedsum;
+}
+
+function hraCalculation(a,b,c,d){
+	if (d == "Metro"){
+		var level = 0.5;
+	}else{
+		var level = 0.4;
+	}
+	
+	var basicIncome =level * a;
+	var hraRecieved = b;
+	var renthra = c - (0.1*a);
+	var hra = Math.min.apply(Math, [basicIncome,hraRecieved,renthra]);
+	return hra;
+}
+
 $(document).ready(function(){	
 	
 	$("#register").click(function(){
@@ -124,9 +156,18 @@ $(document).ready(function(){
 										parseFloat($(".businessIncome").val()),
 										parseFloat($(".otherIncome").val()),
 									);
+	
+	var hraExemption = 	hraCalculation(parseFloat($(".basicSalary").val()),
+						parseFloat($(".hraRecieved").val()),
+						parseFloat($(".rentPaid").val()),
+						$(".residence").val()
+					);
+	var minConveyance = Math.min.apply(Math, [1600*12, parseFloat($(".conveyance").val())]);
+	
+	
 	var exemptionDict10 = fetchExemption10(
-											parseFloat($(".hraExempt").val()),
-											parseFloat($(".conveyance").val()),
+											hraExemption,
+											minConveyance,
 											parseFloat($(".otherExempted").val()),
 											parseFloat($(".professionalTax").val()),
 											);								
@@ -139,11 +180,18 @@ $(document).ready(function(){
 	var exemptionDict = fetchExemptions(
 										sumDict(exemptionDict10),
 										sumDict(exemptionDict24),
-										);								
-	var calculateGrossIncome = 	sumDict(incomeDict) - (exemptionDict._exempt10 + exemptionDict._exempt24);							
+										);
+	var advanceTax = parseFloat($(".advanceTax").val());
+	var grossDeduction = deductionSum(".ded80C") + deductionSum(".ded80Ccd") + deductionSum(".ded6A");	
+	var calculateGrossIncome = 	sumDict(incomeDict) - (exemptionDict._exempt10 + exemptionDict._exempt24) - grossDeduction;							
 	var taxPayable = taxCalculation(calculateGrossIncome, basicInfoDict._age );
 	var totalCess  = eduCess(taxPayable).primary + eduCess(taxPayable).secondary;
 	var finalTax = taxPayable + totalCess;
-	alert(finalTax);
+	var taxRemaining = finalTax - advanceTax;
+	var TIratio = (finalTax/sumDict(incomeDict))*100;
+	$('#remainingTax').removeAttr('disabled');
+	$('#taxToIncomeRatio').removeAttr('disabled');
+	document.getElementById("remainingTax").value = taxRemaining ;
+	document.getElementById("taxToIncomeRatio").value = TIratio.toFixed(2) ;
 	});	
 });
